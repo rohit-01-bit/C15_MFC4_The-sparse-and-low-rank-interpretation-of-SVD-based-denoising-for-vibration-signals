@@ -51,7 +51,7 @@ singular values.
 o WSSVD (Weighted Soft SVD) using weighted soft-thresholding derived from
 weighted ℓ₁-norm minimization.
 
-5. erified theoretical consistency by explicitly showing that:
+5.Verified theoretical consistency by explicitly showing that:
 
 o TSVD corresponds to ℓ₀-norm sparse approximation,
 
@@ -59,16 +59,16 @@ o RSVD corresponds to heuristic reweighting without amplitude fidelity,
 
 o WSSVD follows weighted ℓ₁-norm optimization and preserves amplitude information.
 
-6. Implemented overlap-add reconstruction to convert denoised matrices back into timedomain signals.
+6.Implemented overlap-add reconstruction to convert denoised matrices back into timedomain signals.
 
-7. Conducted quantitative evaluation using relative reconstruction error, demonstrating that
+7.Conducted quantitative evaluation using relative reconstruction error, demonstrating that
 WSSVD achieves significantly lower reconstruction error compared to TSVD and RSVD.
 
-8. Performed envelope analysis and square envelope spectrum analysis on original and
+8.Performed envelope analysis and square envelope spectrum analysis on original and
 denoised signals, clearly showing enhanced fault characteristic frequencies (BPFO and
 harmonics) after WSSVD.
 
-9. Added matrix-level evaluation, comparing Frobenius norms before and after denoising to
+9.Added matrix-level evaluation, comparing Frobenius norms before and after denoising to
 quantitatively demonstrate noise suppression while preserving structural information.
 
 
