@@ -43,9 +43,9 @@ singular value distribution, energy concentration, and orthogonality properties 
 
 4.Implemented and validated three denoising methods:
 
-  o TSVD (Truncated SVD) using hard thresholding of singular values.
+o  TSVD (Truncated SVD) using hard thresholding of singular values.
 
-  o RSVD (Reweighted SVD) using Periodic Modulation Intensity (PMI) to reweight
+o  RSVD (Reweighted SVD) using Periodic Modulation Intensity (PMI) to reweight
 singular values.
 
 o WSSVD (Weighted Soft SVD) using weighted soft-thresholding derived from
