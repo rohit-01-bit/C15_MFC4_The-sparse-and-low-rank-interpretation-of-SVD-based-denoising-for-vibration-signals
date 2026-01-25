@@ -32,16 +32,16 @@ harmonics.
 
 #updates
 
-• Acquired IMS Dataset that consists of high-frequency vibration signals measured from
+1.Acquired IMS Dataset that consists of high-frequency vibration signals measured from
 rolling element bearings operating under constant rotational speed and load.
 
-• Implemented Hankel-type matrix construction from one-dimensional vibration signals using
+2.Implemented Hankel-type matrix construction from one-dimensional vibration signals using
 maximum overlap.
 
-• Performed Singular Value Decomposition (SVD) on the constructed matrix and verified
+3. Performed Singular Value Decomposition (SVD) on the constructed matrix and verified
 singular value distribution, energy concentration, and orthogonality properties numerically.
 
-• Implemented and validated three denoising methods:
+4. Implemented and validated three denoising methods:
 
 o TSVD (Truncated SVD) using hard thresholding of singular values.
 
@@ -51,7 +51,7 @@ singular values.
 o WSSVD (Weighted Soft SVD) using weighted soft-thresholding derived from
 weighted ℓ₁-norm minimization.
 
-• Verified theoretical consistency by explicitly showing that:
+5. Verified theoretical consistency by explicitly showing that:
 
 o TSVD corresponds to ℓ₀-norm sparse approximation,
 
@@ -59,16 +59,16 @@ o RSVD corresponds to heuristic reweighting without amplitude fidelity,
 
 o WSSVD follows weighted ℓ₁-norm optimization and preserves amplitude information.
 
-• Implemented overlap-add reconstruction to convert denoised matrices back into timedomain signals.
+6. Implemented overlap-add reconstruction to convert denoised matrices back into timedomain signals.
 
-• Conducted quantitative evaluation using relative reconstruction error, demonstrating that
+7. Conducted quantitative evaluation using relative reconstruction error, demonstrating that
 WSSVD achieves significantly lower reconstruction error compared to TSVD and RSVD.
 
-• Performed envelope analysis and square envelope spectrum analysis on original and
+8. Performed envelope analysis and square envelope spectrum analysis on original and
 denoised signals, clearly showing enhanced fault characteristic frequencies (BPFO and
 harmonics) after WSSVD.
 
-• Added matrix-level evaluation, comparing Frobenius norms before and after denoising to
+9. Added matrix-level evaluation, comparing Frobenius norms before and after denoising to
 quantitatively demonstrate noise suppression while preserving structural information.
 
 
