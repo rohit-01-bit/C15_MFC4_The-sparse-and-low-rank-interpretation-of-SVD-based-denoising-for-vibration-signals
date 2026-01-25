@@ -38,20 +38,20 @@ rolling element bearings operating under constant rotational speed and load.
 2.Implemented Hankel-type matrix construction from one-dimensional vibration signals using
 maximum overlap.
 
-3. Performed Singular Value Decomposition (SVD) on the constructed matrix and verified
+3.Performed Singular Value Decomposition (SVD) on the constructed matrix and verified
 singular value distribution, energy concentration, and orthogonality properties numerically.
 
-4. Implemented and validated three denoising methods:
+4.Implemented and validated three denoising methods:
 
-o TSVD (Truncated SVD) using hard thresholding of singular values.
+  o TSVD (Truncated SVD) using hard thresholding of singular values.
 
-o RSVD (Reweighted SVD) using Periodic Modulation Intensity (PMI) to reweight
+  o RSVD (Reweighted SVD) using Periodic Modulation Intensity (PMI) to reweight
 singular values.
 
 o WSSVD (Weighted Soft SVD) using weighted soft-thresholding derived from
 weighted ℓ₁-norm minimization.
 
-5. Verified theoretical consistency by explicitly showing that:
+5. erified theoretical consistency by explicitly showing that:
 
 o TSVD corresponds to ℓ₀-norm sparse approximation,
 
