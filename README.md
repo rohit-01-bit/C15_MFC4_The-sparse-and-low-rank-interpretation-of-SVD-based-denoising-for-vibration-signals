@@ -9,7 +9,7 @@
 4.Sirigiri Saradhi 
 
 
-#Project Outline 
+#**Project Outline** 
 
 This project focuses on the implementation and analysis of SVD-based denoising techniques for
 bearing vibration signals. Raw vibration signals acquired from rotating machinery bearings are
