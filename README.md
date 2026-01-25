@@ -31,7 +31,7 @@ through time-domain analysis, envelope analysis, and square envelope spectrum an
 the identification and enhancement of bearing fault characteristic frequencies such as BPFO and its
 harmonics.
 
-#updates
+#**updates**
 
 1.Acquired IMS Dataset that consists of high-frequency vibration signals measured from
 rolling element bearings operating under constant rotational speed and load.
@@ -73,7 +73,8 @@ harmonics) after WSSVD.
 quantitatively demonstrate noise suppression while preserving structural information.
 
 
-#Challenges
+#**Challenges**
+
 
 1. Singular Value Interpretation
 Differentiating between noise-dominant and fault-dominant singular components was non-trivial, as
@@ -95,7 +96,8 @@ Overlap-add reconstruction from denoised Hankel matrices had to be carefully imp
 prevent boundary artifacts and ensure faithful time-domain signal recovery.
 
 
-#Future Work
+#**Future Work**
+
 1. Extension to Real-World Audio-Format Vibration Signals
 Extend the current framework to process vibration signals stored in real-world formats such
 as .wav or .mp3, enabling perceptual inspection alongside mathematical analysis and
