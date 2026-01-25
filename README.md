@@ -44,17 +44,23 @@ singular value distribution, energy concentration, and orthogonality properties 
 • Implemented and validated three denoising methods:
 
 o TSVD (Truncated SVD) using hard thresholding of singular values.
+
 o RSVD (Reweighted SVD) using Periodic Modulation Intensity (PMI) to reweight
 singular values.
+
 o WSSVD (Weighted Soft SVD) using weighted soft-thresholding derived from
 weighted ℓ₁-norm minimization.
 
 • Verified theoretical consistency by explicitly showing that:
+
 o TSVD corresponds to ℓ₀-norm sparse approximation,
+
 o RSVD corresponds to heuristic reweighting without amplitude fidelity,
+
 o WSSVD follows weighted ℓ₁-norm optimization and preserves amplitude information.
 
 • Implemented overlap-add reconstruction to convert denoised matrices back into timedomain signals.
+
 • Conducted quantitative evaluation using relative reconstruction error, demonstrating that
 WSSVD achieves significantly lower reconstruction error compared to TSVD and RSVD.
 
