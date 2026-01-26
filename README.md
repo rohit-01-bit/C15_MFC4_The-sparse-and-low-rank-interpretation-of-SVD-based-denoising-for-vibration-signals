@@ -105,9 +105,7 @@ singular value distribution, energy concentration, and orthogonality properties 
 5.Verified theoretical consistency by explicitly showing that:
 
 - TSVD corresponds to ℓ₀-norm sparse approximation,
-
 - RSVD corresponds to heuristic reweighting without amplitude fidelity,
-
 - WSSVD follows weighted ℓ₁-norm optimization and preserves amplitude information.
 
 6.Implemented overlap-add reconstruction to convert denoised matrices back into timedomain signals.
