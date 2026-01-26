@@ -81,9 +81,7 @@ Signal Reconstruction
 ### Fault Feature Enhancement
 
 - Envelope analysis
-
 - Square envelope spectrum
-
 - Fault frequency identification (BPFO, BPFI) using bearing geometry.
 
 ---
