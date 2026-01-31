@@ -40,7 +40,20 @@ SVD-based denoising provides a promising framework, but existing approaches ofte
 
 This project addresses these limitations through structured low-rank modeling and sparsity-aware optimization.
 
-## 3. Methodology
+## 3. Motivation
+
+Vibration signals from rotating machinery bearings are highly noisy and non-stationary, especially during early fault stages, making fault-related features difficult to detect using conventional time- or frequency-domain analysis. Singular Value Decomposition (SVD) is widely used for vibration signal denoising, yet most existing approaches rely on heuristic singular value manipulation without clear theoretical justification. As a result, traditional SVD methods often suffer from amplitude distortion, information loss, and inconsistent denoising performance.
+
+This project is motivated by the need to understand why SVD-based denoising works and how it can be made more reliable and physically meaningful. By interpreting SVD denoising within a sparse and low-rank optimization framework, the project reveals the mathematical foundations of commonly used methods such as TSVD and RSVD and demonstrates how weighted ℓ₁-norm regularization leads to adaptive and stable denoising. Applying this theory to real bearing vibration data shows that fault-related impulsive features and characteristic frequencies can be enhanced more clearly while preserving signal amplitude, making the approach both theoretically insightful and practically valuable for machinery condition monitoring.
+
+## 4. Objectives
+
+- To model vibration signal denoising as a sparse and low-rank optimization problem using a matrix representation of time-series data.
+- To analyze and compare classical TSVD, heuristic reweighted SVD (RSVD), and weighted soft-threshold SVD (WSSVD)
+- To implement fault classification using machine learning models trained on features extracted from WSSVD-denoised signals.
+- To denoise acoustic signals (.wav/mp3), validating its robustness beyond vibration-only data.
+
+## 5. Methodology
 
 ### Data Acquisition
 
@@ -83,6 +96,21 @@ Signal Reconstruction
 - Envelope analysis
 - Square envelope spectrum
 - Fault frequency identification (BPFO, BPFI) using bearing geometry.
+
+---
+
+# Results and Discussion
+The proposed SVD-based denoising framework was evaluated using raw vibration signals from the IMS bearing dataset. A one-second vibration segment sampled at 20 kHz was used to construct a Hankel-structured matrix with maximum overlap, resulting in a matrix of size 40×19961. Visualization of the constructed matrix confirmed the expected Hankel structure, validating correct signal-to-matrix transformation. Singular Value Decomposition revealed a rapidly decaying singular value distribution, with the first ten singular values capturing approximately 67% of the total energy, indicating a strong low-rank characteristic of the vibration signal.
+
+Three denoising methods—TSVD, RSVD, and WSSVD—were implemented and compared. TSVD retained only the first ten singular values through hard truncation, which reduced noise but introduced significant information loss. RSVD applied heuristic reweighting based on Periodic Modulation Intensity (PMI), selectively emphasizing components with strong periodic content. However, this approach altered singular value magnitudes directly, leading to amplitude distortion. In contrast, WSSVD applied weighted soft-thresholding derived from weighted ℓ₁-norm minimization, adaptively shrinking singular values while preserving their relative amplitude structure.
+
+Quantitative evaluation using relative reconstruction error clearly demonstrates the superiority of WSSVD. TSVD resulted in a high reconstruction error of 0.5220, indicating excessive loss of signal content. RSVD improved reconstruction accuracy with an error of 0.4654, but still suffered from amplitude degradation. WSSVD achieved a substantially lower reconstruction error of 0.0094, confirming its ability to suppress noise while maintaining signal fidelity. Matrix-level analysis further supports this observation: the Frobenius norm of the denoised matrix decreased by only 0.52%, indicating effective noise reduction without structural distortion.
+
+Time-domain comparisons show that TSVD and RSVD fail to clearly isolate fault-related impulsive components, whereas WSSVD produces a cleaner impulsive waveform consistent with bearing fault characteristics. Envelope spectrum analysis reveals that fault characteristic frequencies such as BPFO (~102.77 Hz) and BPFI (~163.90 Hz) are weak or partially submerged in the original and TSVD-processed signals. RSVD enhances these components but with significantly reduced amplitude. In contrast, WSSVD distinctly enhances BPFO and its harmonics with stable and physically meaningful amplitudes, closely matching the behavior reported in the base paper.
+
+Further processing using resonance band extraction (500–5000 Hz) followed by square envelope spectrum analysis confirms that WSSVD effectively suppresses random impulse interference while enhancing periodic fault features. The square envelope spectrum of the WSSVD-processed signal shows clear peaks at BPFO, 2×BPFO, and 3×BPFO, consistent with early-stage bearing fault behavior described in the experimental study of the base paper.
+
+Overall, the results validate the sparse and low-rank interpretation of SVD-based denoising. TSVD is confirmed as equivalent to ℓ₀-norm minimization with hard thresholding, RSVD as a heuristic weighted approach lacking amplitude fidelity, and WSSVD as a theoretically grounded weighted ℓ₁-norm solution that achieves superior denoising performance with amplitude preservation.
 
 ---
 
