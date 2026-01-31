@@ -155,4 +155,9 @@ Utilize the denoised signals obtained through WSSVD as input to a fault diagnosi
 involving feature extraction (time-domain, frequency-domain, and envelope-based features)
 and supervised classification for automated bearing fault identification.
 
+# References
+
+1. The sparse and low-rank interpretation of SVD-based denoising for vibration signals
+  https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9129272
+
 
