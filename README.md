@@ -1,3 +1,14 @@
+# The Sparse and Low Rank Interpretation of SVD bases Signal denoising
+Team 15 (AIE-C):
+
+Arepalle Charan Kumar Reddy (CB.SC.U4AIE2407)
+
+Manda Rohit Vardha (CB.SC.U4AIE24231)
+
+Pagala Sai Vandith Reddy (CB.SC.U4AIE24239)
+
+Sirigiri Saradhi (CB.SC.U4AIE2465)
+
 # Abstract
   Vibration signals collected from rotating machinery often contain
   strong background noise that obscures weak fault signatures.
@@ -172,9 +183,6 @@ $$X = \sum_{i=1}^{r} \alpha_i u_i v_i^{T}$$
 where the singular value coefficients are obtained using the
 thresholding rule
 
-\alpha_i = \operatorname{sgn}(\sigma_i)\,
-\max \left( |\sigma_i| , \sqrt{2\lambda} \right)
-
 where
 
 -   $X$ is the reconstructed denoised Hankel matrix
@@ -189,10 +197,6 @@ where
 
 -   $\lambda$ is the regularization parameter controlling the denoising
     strength
-
--   $\operatorname{sgn}(\cdot)$ denotes the sign function
-
--   $r$ represents the number of retained singular components
 
 By applying this thresholding operation, singular components with small
 magnitude are suppressed, while dominant singular components
@@ -263,17 +267,6 @@ $$Kurtosis =
 
 High kurtosis indicates stronger impulsive behavior which is
 characteristic of bearing faults.
-
-# Results
-
-::: center
-  Method    RMS Ratio   Peak Ratio   Energy Ratio   Kurtosis
-  -------- ----------- ------------ -------------- ----------
-  TSVD       1.0000       1.0000        1.0000       5.1116
-  RSVD       0.5579       0.4588        0.3112       3.7839
-  WSSVD      0.9827       0.9704        0.9656       4.9769
-  WNNM       0.9986       0.9977        0.9972       5.1007
-:::
 
 # Fault Classification
 
